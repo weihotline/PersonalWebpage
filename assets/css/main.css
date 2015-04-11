@@ -115,6 +115,13 @@ a:active {
 #networks {
   position: relative; }
 
+#hero .hero-block p {
+  margin-left: 20%;
+  margin-right: 50%;
+  margin-bottom: 30px;
+  width: 60%;
+}
+
 .hero-block,
 .footer-block {
   height: 390px;
@@ -229,6 +236,11 @@ ul, menu, dir {
     @media only screen and (max-width: 767px) {
       ul.slides li {
         width: 50%; } }
+    @media only screen and (min-width: 640px) and (max-width: 767px) {
+      #hero .hero-block p {
+        font-size: 65%; }
+      ul.slides li {
+        width: 40%; } }
     ul.slides li a {
       display: block;
       width: 100%;
