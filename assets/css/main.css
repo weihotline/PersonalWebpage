@@ -246,7 +246,8 @@ ul, menu, dir {
       ul.slides li {
         width: 40%; }
       .d-hover p {
-        display: none !important; }}
+        display: none !important;
+        font-size: 10px; }}
     ul.slides li a {
       display: block;
       width: 100%;
