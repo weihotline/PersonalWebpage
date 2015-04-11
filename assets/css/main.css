@@ -244,7 +244,9 @@ ul, menu, dir {
         margin-bottom: 0px;
         font-size: 60%; }
       ul.slides li {
-        width: 40%; } }
+        width: 40%; }
+      .d-hover p {
+        display: none !important; }}
     ul.slides li a {
       display: block;
       width: 100%;
