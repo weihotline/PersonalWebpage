@@ -192,8 +192,9 @@ ul.slides {
 
 ul.slides li {
 display: inline-block;
-width: 40%;
+width: 31%;
 margin-top: 20px;
+margin-left: 30px;
 margin-right: 20px;}
 
 
