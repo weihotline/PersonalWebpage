@@ -236,7 +236,10 @@ ul, menu, dir {
     @media only screen and (max-width: 767px) {
       ul.slides li {
         width: 50%; } }
-    @media only screen and (min-width: 640px) and (max-width: 767px) {
+    @media only screen
+        and (max-device-width: 640px),
+        only screen and (max-device-width: 667px),
+        only screen and (max-width: 480px) {
       #hero .hero-block p {
         font-size: 65%; }
       ul.slides li {
