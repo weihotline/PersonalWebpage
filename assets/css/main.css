@@ -50,9 +50,8 @@ p {
 
 .description p {
     margin-top: 10px;
-    border: 1px solid salmon;
-    border-radius: 30px;
 }
+
 
 /* Links */
 a {
@@ -170,6 +169,12 @@ a:after {
 	color: white;
 	font-weight: 400;
 	font-size: 20px;
+}
+
+/* WORK */
+.col-lg-6 {
+  border: 1px solid salmon;
+  border-radius: 40px;
 }
 
 /* Skills */
