@@ -7,7 +7,7 @@ $(function(){
     });
 
     $("#hello h2").typed({
-      strings: ["A HANDSOME", "A TALENTED SOFTWARE ENGINEER."],
+      strings: ["A HANDSOME", "A TALENTED SOFTWARE ENGINEER"],
       typeSpeed: 20,
       backSpeed: 20,
       startDelay: 1200,
