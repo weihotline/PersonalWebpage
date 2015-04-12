@@ -2,7 +2,7 @@ $(function(){
     $("#hello h1").typed({
       strings: ["I am Weih Li"],
       typeSpeed: 20,
-      startDelay: 500,
+      startDelay: 700,
       showCursor: false
     });
 
@@ -10,7 +10,7 @@ $(function(){
       strings: ["A HANDSOME", "A TALENTED SOFTWARE ENGINEER"],
       typeSpeed: 20,
       backSpeed: 20,
-      startDelay: 1200,
+      startDelay: 1400,
       showCursor: false
   });
 
