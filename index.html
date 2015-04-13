@@ -8,8 +8,8 @@
   <meta name="author" content="By BlackTie.io">
   <title>Weih Li's WebPage</title>
   <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/css/main.css" rel="stylesheet">
   <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
   <script src="assets/js/jquery-1.11.2.min.js"></script>
   <script src="assets/js/chart.min.js"></script>
   <script src="assets/js/typed.min.js"></script>
@@ -31,7 +31,7 @@
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
-          <!-- <li class="active"><a href="#blogsModal" data-toggle="modal">Blogs</a></li> -->
+          <li class="active"><a href="#blogsModal" data-toggle="modal">Tricks</a></li>
           <li class="active"><a href="#contact">Contact</a></li>
         </ul>
       </div><!--/.nav-collapse -->
@@ -56,6 +56,14 @@
             <span aria-hidden="true">&times;</span>
           </button>
           <div class="modal-title" id="blogsModalLabel">
+            <div class="wrapper">
+              <div id="dd" class="wrapper-dropdown" tabindex="1">
+                <span>Developer Tricks</span>
+                <ul class="dropdown">
+                  <li><a href="#"><i class="fa fa-laptop">&nbsp;</i>Javascript Inheritance</a></li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
         <div class="modal-body"></div>
@@ -168,6 +176,7 @@
       </div>
     </div>
   </div>
+  <script src="assets/js/dropdown.min.js"></script>
   <script src="assets/js/animate.min.js"></script>
   <script src="lib/blogs.js"></script>
   <script src="assets/js/underscore-min.js"></script>
