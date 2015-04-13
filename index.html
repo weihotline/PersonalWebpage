@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="description" content="Weihao Li Personal Page">
+  <meta name="author" content="By BlackTie.io">
   <title>Weih Li's WebPage</title>
-  <link href="assets/css/bootstrap.css" rel="stylesheet">
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/css/main.css" rel="stylesheet">
   <link href="assets/css/font-awesome.min.css" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-  <script src="assets/js/chart.js"></script>
+  <script src="assets/js/chart.min.js"></script>
   <script src="assets/js/typed.min.js"></script>
   <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -31,7 +31,7 @@
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li class="active"><a href="#contact">Blog</a></li>
+          <li class="active"><a href="#blogsModal" data-toggle="modal">Blog</a></li>
           <li class="active"><a href="#contact">Contact</a></li>
         </ul>
       </div><!--/.nav-collapse -->
@@ -47,6 +47,22 @@
         </div><!-- /row -->
       </div> <!-- /container -->
   </div><!-- /hello -->
+  <div class="modal fade" id="blogsModal" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">Blogs</h4>
+        </div>
+        <div class="modal-body">
+          <a href="http://google.com">Google</a>
+        </div>
+      </div>
+    </div>
+  </div><!-- /modal -->
   <div id="green">
     <div class="container">
       <div class="row">
@@ -154,6 +170,6 @@
     </div>
   </div>
   <script src="assets/js/trigger.js"></script>
-  <script src="assets/js/bootstrap.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
 </body>
 </html>
