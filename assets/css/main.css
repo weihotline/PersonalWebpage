@@ -56,6 +56,23 @@ p {
     margin-top: 10px;
 }
 
+.modal-title {
+    text-align: center;
+}
+
+.modal-body {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.modal-body ul {
+    list-style-type: none;
+}
+
+.modal-body ul li {
+    margin-bottom: 10px
+}
+
 
 /* Links */
 a {
