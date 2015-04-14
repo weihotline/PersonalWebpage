@@ -1,3 +1,4 @@
+<p>Javascript is one of the coolest languages in the world! It is ubiquitous, so let's have fun with it.</p>
 <!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
  2
  3
@@ -30,7 +31,24 @@
 30
 31
 32
-33</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #8f5902; font-style: italic">// Parent Class</span>
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #8f5902; font-style: italic">// Parent Class</span>
 <span style="color: #204a87; font-weight: bold">function</span> <span style="color: #000000">Parent</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">name</span><span style="color: #000000; font-weight: bold">)</span> <span style="color: #000000; font-weight: bold">{</span>
     <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">name</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">name</span><span style="color: #000000; font-weight: bold">;</span>
 <span style="color: #000000; font-weight: bold">}</span>
@@ -63,4 +81,21 @@
 
 <span style="color: #000000">p</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">sayMyName</span><span style="color: #000000; font-weight: bold">();</span> <span style="color: #8f5902; font-style: italic">//=&gt; &quot;John&quot;</span>
 <span style="color: #000000">c</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">sayMyName</span><span style="color: #000000; font-weight: bold">();</span> <span style="color: #8f5902; font-style: italic">//=&gt; &quot;Sam&quot;</span>
+
+
+<span style="color: #8f5902; font-style: italic">// How about overriding parent&#39;s method (Java&#39;s &#39;super&#39;)</span>
+<span style="color: #000000">Child</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">prototype</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87">Object</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">create</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">Parent</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">prototype</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000; font-weight: bold">{</span>
+    <span style="color: #000000">sayMyName</span><span style="color: #ce5c00; font-weight: bold">:</span> <span style="color: #000000; font-weight: bold">{</span>
+        <span style="color: #000000">value</span><span style="color: #ce5c00; font-weight: bold">:</span> <span style="color: #204a87; font-weight: bold">function</span><span style="color: #000000; font-weight: bold">()</span> <span style="color: #000000; font-weight: bold">{</span>
+            <span style="color: #000000">process</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">stdout</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">write</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #4e9a06">&quot;I&#39;m &quot;</span><span style="color: #000000; font-weight: bold">);</span>
+            <span style="color: #000000">Parent</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">prototype</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">sayMyName</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">call</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">);</span>
+         <span style="color: #000000; font-weight: bold">}</span>
+    <span style="color: #000000; font-weight: bold">}</span>
+<span style="color: #000000; font-weight: bold">});</span>
+
+<span style="color: #000000">p</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">new</span> <span style="color: #000000">Parent</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #4e9a06">&quot;John&quot;</span><span style="color: #000000; font-weight: bold">);</span>
+<span style="color: #000000">c</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">new</span> <span style="color: #000000">Child</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #4e9a06">&quot;Sam&quot;</span><span style="color: #000000; font-weight: bold">);</span>
+
+<span style="color: #000000">p</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">sayMyName</span><span style="color: #000000; font-weight: bold">();</span> <span style="color: #8f5902; font-style: italic">//=&gt; &quot;John&quot;</span>
+<span style="color: #000000">c</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">sayMyName</span><span style="color: #000000; font-weight: bold">();</span> <span style="color: #8f5902; font-style: italic">//=&gt; &quot;I&#39;m Sam&quot;</span>
 </pre></td></tr></table></div>
