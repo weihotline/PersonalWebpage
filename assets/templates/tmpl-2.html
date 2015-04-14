@@ -45,7 +45,7 @@
 45
 46
 47</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #8f5902; font-style: italic">/* Writing class-like function in Javascript is fun.</span>
-<span style="color: #8f5902; font-style: italic"> * But do you know what is the magic keyword `this` all about?</span>
+<span style="color: #8f5902; font-style: italic"> * But do you know how does the magic keyword `this` work?</span>
 <span style="color: #8f5902; font-style: italic"> */</span>
 <span style="color: #8f5902; font-style: italic">// Simple class</span>
 <span style="color: #204a87; font-weight: bold">function</span> <span style="color: #000000">Person</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">name</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">age</span><span style="color: #000000; font-weight: bold">)</span> <span style="color: #000000; font-weight: bold">{</span>
@@ -75,7 +75,7 @@
 <span style="color: #000000">p</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">age</span><span style="color: #000000; font-weight: bold">;</span>  <span style="color: #8f5902; font-style: italic">//=&gt; 9</span>
 
 
-<span style="color: #8f5902; font-style: italic">// What if you forget to put the word `new` when you instantiate</span>
+<span style="color: #8f5902; font-style: italic">// What if you forgot to put the word `new` when you instantiate</span>
 <span style="color: #8f5902; font-style: italic">// an object?</span>
 <span style="color: #204a87; font-weight: bold">function</span> <span style="color: #000000">Cat</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">name</span><span style="color: #000000; font-weight: bold">)</span> <span style="color: #000000; font-weight: bold">{</span>
     <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">name</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">name</span><span style="color: #000000; font-weight: bold">;</span>
@@ -86,9 +86,9 @@
 <span style="color: #000000">c</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">name</span>    <span style="color: #8f5902; font-style: italic">// TypeError; undefined has no property &#39;name&#39;</span>
 <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">name</span> <span style="color: #8f5902; font-style: italic">//=&gt; &quot;Gizmo&quot;</span>
 
-<span style="color: #8f5902; font-style: italic">/* what is all about the last line `this.name`?</span>
-<span style="color: #8f5902; font-style: italic"> * It turns out there is a global object `this`</span>
+<span style="color: #8f5902; font-style: italic">/* Why does the last line `this.name` return "Gizmo"?</span>
+<span style="color: #8f5902; font-style: italic"> * It turns out there is a global object `this`.</span>
 <span style="color: #8f5902; font-style: italic"> * When Cat(&quot;Gizmo&quot;) is invoked, the property `name` is added </span>
-<span style="color: #8f5902; font-style: italic"> * to global object `this`. Hence this.name return &quot;Gizmo&quot;</span>
+<span style="color: #8f5902; font-style: italic"> * to the global object `this`. Hence this.name return &quot;Gizmo&quot;</span>
 <span style="color: #8f5902; font-style: italic"> */</span>
 </pre></td></tr></table></div>
