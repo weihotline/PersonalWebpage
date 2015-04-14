@@ -134,8 +134,8 @@ p {
     /* Size & position */
     position: absolute;
     top: 100%;
-    right: -50%;
-    min-width: 400px;
+    right: -25%;
+    min-width: 300px;
     z-index: 999;
 
     /* Styles */
@@ -162,7 +162,7 @@ p {
     height: 0;
     position: absolute;
     bottom: 100%;
-    right: 184px;
+    right: 134px;
     border-width: 0 6px 6px 6px;
     border-style: solid;
     border-color: #fff transparent;
@@ -174,7 +174,7 @@ p {
     height: 0;
     position: absolute;
     bottom: 100%;
-    right: 182px;
+    right: 132px;
     border-width: 0 8px 8px 8px;
     border-style: solid;
     border-color: rgba(0,0,0,0.1) transparent;
