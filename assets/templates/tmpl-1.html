@@ -44,57 +44,51 @@
 44
 45
 46
-47
-48
-49
-50</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #8f5902; font-style: italic">// Parent Class</span>
-<span style="color: #204a87; font-weight: bold">function</span> <span style="color: #000000">Parent</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">name</span><span style="color: #000000; font-weight: bold">)</span> <span style="color: #000000; font-weight: bold">{</span>
+47</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #8f5902; font-style: italic">/* Writing class-like function in Javascript is fun.</span>
+<span style="color: #8f5902; font-style: italic"> * But do you know how does the magic keyword `this` work?</span>
+<span style="color: #8f5902; font-style: italic"> */</span>
+<span style="color: #8f5902; font-style: italic">// Simple class</span>
+<span style="color: #204a87; font-weight: bold">function</span> <span style="color: #000000">Person</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">name</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">age</span><span style="color: #000000; font-weight: bold">)</span> <span style="color: #000000; font-weight: bold">{</span>
+    <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">name</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">name</span><span style="color: #000000; font-weight: bold">;</span>
+    <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">age</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">age</span><span style="color: #000000; font-weight: bold">;</span>
+<span style="color: #000000; font-weight: bold">}</span>
+
+<span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">p</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">new</span> <span style="color: #000000">Person</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #4e9a06">&quot;John&quot;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">10</span><span style="color: #000000; font-weight: bold">);</span>
+<span style="color: #000000">p</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">name</span><span style="color: #000000; font-weight: bold">;</span> <span style="color: #8f5902; font-style: italic">//=&gt; &quot;John&quot;</span>
+<span style="color: #000000">p</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">age</span><span style="color: #000000; font-weight: bold">;</span>  <span style="color: #8f5902; font-style: italic">//=&gt; 10</span>
+
+
+<span style="color: #8f5902; font-style: italic">/* when you use `new` before invoking the function Person,</span>
+<span style="color: #8f5902; font-style: italic"> * the object `this` is created inside the function. At the end,</span>
+<span style="color: #8f5902; font-style: italic"> * `this` is returned.</span>
+<span style="color: #8f5902; font-style: italic"> */</span>
+<span style="color: #8f5902; font-style: italic">// since `this` is a reserved keyword, I use `that` instead.</span>
+<span style="color: #204a87; font-weight: bold">function</span> <span style="color: #000000">Person</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">name</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">age</span><span style="color: #000000; font-weight: bold">)</span> <span style="color: #000000; font-weight: bold">{</span>
+    <span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">that</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000; font-weight: bold">{};</span>
+    <span style="color: #000000">that</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">name</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">name</span><span style="color: #000000; font-weight: bold">;</span>
+    <span style="color: #000000">that</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">age</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">age</span><span style="color: #000000; font-weight: bold">;</span>
+    <span style="color: #204a87; font-weight: bold">return</span> <span style="color: #000000">that</span><span style="color: #000000; font-weight: bold">;</span>
+<span style="color: #000000; font-weight: bold">}</span>
+
+<span style="color: #000000">p</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">Person</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #4e9a06">&quot;Sam&quot;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">9</span><span style="color: #000000; font-weight: bold">);</span>
+<span style="color: #000000">p</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">name</span><span style="color: #000000; font-weight: bold">;</span> <span style="color: #8f5902; font-style: italic">//=&gt; &quot;Sam&quot;</span>
+<span style="color: #000000">p</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">age</span><span style="color: #000000; font-weight: bold">;</span>  <span style="color: #8f5902; font-style: italic">//=&gt; 9</span>
+
+
+<span style="color: #8f5902; font-style: italic">// What if you forgot to put the word `new` when you instantiate</span>
+<span style="color: #8f5902; font-style: italic">// an object?</span>
+<span style="color: #204a87; font-weight: bold">function</span> <span style="color: #000000">Cat</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">name</span><span style="color: #000000; font-weight: bold">)</span> <span style="color: #000000; font-weight: bold">{</span>
     <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">name</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">name</span><span style="color: #000000; font-weight: bold">;</span>
 <span style="color: #000000; font-weight: bold">}</span>
 
-<span style="color: #000000">Parent</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">prototype</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">sayMyName</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">function</span><span style="color: #000000; font-weight: bold">()</span> <span style="color: #000000; font-weight: bold">{</span>
-    <span style="color: #000000">console</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">log</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">name</span><span style="color: #000000; font-weight: bold">);</span>
-<span style="color: #000000; font-weight: bold">}</span>
+<span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">c</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">Cat</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #4e9a06">&quot;Gizmo&quot;</span><span style="color: #000000; font-weight: bold">);</span>
+<span style="color: #000000">c</span>         <span style="color: #8f5902; font-style: italic">//=&gt; undefined because nothing is returned from Cat();</span>
+<span style="color: #000000">c</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">name</span>    <span style="color: #8f5902; font-style: italic">// TypeError; undefined has no property &#39;name&#39;</span>
+<span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">name</span> <span style="color: #8f5902; font-style: italic">//=&gt; &quot;Gizmo&quot;</span>
 
-
-<span style="color: #8f5902; font-style: italic">// Child Class</span>
-<span style="color: #204a87; font-weight: bold">function</span> <span style="color: #000000">Child</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">name</span><span style="color: #000000; font-weight: bold">)</span> <span style="color: #000000; font-weight: bold">{</span>
-    <span style="color: #000000">Parent</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">call</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">name</span><span style="color: #000000; font-weight: bold">);</span>
-<span style="color: #000000; font-weight: bold">}</span>
-
-<span style="color: #8f5902; font-style: italic">// Prototype chaining</span>
-<span style="color: #8f5902; font-style: italic">// Check if Object.create exists (ECMAScript 5)</span>
-<span style="color: #204a87; font-weight: bold">if</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87">Object</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">create</span> <span style="color: #ce5c00; font-weight: bold">===</span> <span style="color: #204a87; font-weight: bold">undefined</span><span style="color: #000000; font-weight: bold">)</span> <span style="color: #000000; font-weight: bold">{</span>
-    <span style="color: #204a87">Object</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">create</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">function</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">parent</span><span style="color: #000000; font-weight: bold">)</span> <span style="color: #000000; font-weight: bold">{</span>
-        <span style="color: #204a87; font-weight: bold">function</span> <span style="color: #000000">Surrogate</span><span style="color: #000000; font-weight: bold">()</span> <span style="color: #000000; font-weight: bold">{};</span>
-        <span style="color: #000000">Surrogate</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">prototype</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">parent</span><span style="color: #000000; font-weight: bold">;</span>
-        <span style="color: #204a87; font-weight: bold">return</span> <span style="color: #204a87; font-weight: bold">new</span> <span style="color: #000000">Surrogate</span><span style="color: #000000; font-weight: bold">();</span>
-     <span style="color: #000000; font-weight: bold">}</span>
-<span style="color: #000000; font-weight: bold">}</span>
-
-<span style="color: #000000">Child</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">prototype</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87">Object</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">create</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">Parent</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">prototype</span><span style="color: #000000; font-weight: bold">);</span>
-
-<span style="color: #8f5902; font-style: italic">// Initialize</span>
-<span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">p</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">new</span> <span style="color: #000000">Parent</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #4e9a06">&quot;John&quot;</span><span style="color: #000000; font-weight: bold">);</span>
-<span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">c</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">new</span> <span style="color: #000000">Child</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #4e9a06">&quot;Sam&quot;</span><span style="color: #000000; font-weight: bold">);</span>
-
-<span style="color: #000000">p</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">sayMyName</span><span style="color: #000000; font-weight: bold">();</span> <span style="color: #8f5902; font-style: italic">//=&gt; &quot;John&quot;</span>
-<span style="color: #000000">c</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">sayMyName</span><span style="color: #000000; font-weight: bold">();</span> <span style="color: #8f5902; font-style: italic">//=&gt; &quot;Sam&quot;</span>
-
-
-<span style="color: #8f5902; font-style: italic">// How about overriding parent&#39;s method (Java&#39;s &#39;super&#39;)</span>
-<span style="color: #000000">Child</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">prototype</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87">Object</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">create</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">Parent</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">prototype</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000; font-weight: bold">{</span>
-    <span style="color: #000000">sayMyName</span><span style="color: #ce5c00; font-weight: bold">:</span> <span style="color: #000000; font-weight: bold">{</span>
-        <span style="color: #000000">value</span><span style="color: #ce5c00; font-weight: bold">:</span> <span style="color: #204a87; font-weight: bold">function</span><span style="color: #000000; font-weight: bold">()</span> <span style="color: #000000; font-weight: bold">{</span>
-            <span style="color: #000000">process</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">stdout</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">write</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #4e9a06">&quot;I&#39;m &quot;</span><span style="color: #000000; font-weight: bold">);</span>
-            <span style="color: #000000">Parent</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">prototype</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">sayMyName</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">call</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">);</span>
-         <span style="color: #000000; font-weight: bold">}</span>
-    <span style="color: #000000; font-weight: bold">}</span>
-<span style="color: #000000; font-weight: bold">});</span>
-
-<span style="color: #000000">p</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">new</span> <span style="color: #000000">Parent</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #4e9a06">&quot;John&quot;</span><span style="color: #000000; font-weight: bold">);</span>
-<span style="color: #000000">c</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">new</span> <span style="color: #000000">Child</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #4e9a06">&quot;Sam&quot;</span><span style="color: #000000; font-weight: bold">);</span>
-
-<span style="color: #000000">p</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">sayMyName</span><span style="color: #000000; font-weight: bold">();</span> <span style="color: #8f5902; font-style: italic">//=&gt; &quot;John&quot;</span>
-<span style="color: #000000">c</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">sayMyName</span><span style="color: #000000; font-weight: bold">();</span> <span style="color: #8f5902; font-style: italic">//=&gt; &quot;I&#39;m Sam&quot;</span>
+<span style="color: #8f5902; font-style: italic">/* Why does the last line `this.name` return "Gizmo"?</span>
+<span style="color: #8f5902; font-style: italic"> * It turns out there is a global object `this`.</span>
+<span style="color: #8f5902; font-style: italic"> * When Cat(&quot;Gizmo&quot;) is invoked, the property `name` is added </span>
+<span style="color: #8f5902; font-style: italic"> * to the global object `this`. Hence this.name return &quot;Gizmo&quot;</span>
+<span style="color: #8f5902; font-style: italic"> */</span>
 </pre></td></tr></table></div>
