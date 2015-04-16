@@ -88,6 +88,8 @@
 
 <span style="color: #8f5902; font-style: italic">/* Why does the last line `this.name` return "Gizmo"?</span>
 <span style="color: #8f5902; font-style: italic"> * It turns out there is a global object `this`.</span>
+<span style="color: #8f5902; font-style: italic"> * `this` is the global host object. It tells you the host environment:</span>
+<span style="color: #8f5902; font-style: italic"> * window for browser; global for nodejs.</span>
 <span style="color: #8f5902; font-style: italic"> * When Cat(&quot;Gizmo&quot;) is invoked, the property `name` is added </span>
 <span style="color: #8f5902; font-style: italic"> * to the global object `this`. Hence this.name return &quot;Gizmo&quot;</span>
 <span style="color: #8f5902; font-style: italic"> */</span>
