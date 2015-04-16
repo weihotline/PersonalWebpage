@@ -1,0 +1,192 @@
+<!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #8f5902; font-style: italic">/* Tiny tricks that make you appreciate Javascript more.</span>
+<span style="color: #8f5902; font-style: italic"> * credit by toptal: Javascript interview questions</span>
+<span style="color: #8f5902; font-style: italic"> */</span>
+<span style="color: #8f5902; font-style: italic">// check if a number is an integer.</span>
+<span style="color: #204a87; font-weight: bold">function</span> <span style="color: #000000">isInteger</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">num</span><span style="color: #000000; font-weight: bold">)</span> <span style="color: #000000; font-weight: bold">{</span>
+    <span style="color: #204a87; font-weight: bold">return</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">num</span> <span style="color: #ce5c00; font-weight: bold">^</span> <span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">)</span> <span style="color: #ce5c00; font-weight: bold">===</span> <span style="color: #000000">num</span><span style="color: #000000; font-weight: bold">;</span>
+<span style="color: #000000; font-weight: bold">}</span>
+<span style="color: #8f5902; font-style: italic">/* num ^ 0 basically flooring the number: Math.floor(num) </span>
+<span style="color: #8f5902; font-style: italic"> * Integer should have the same value after being floored.</span>
+<span style="color: #8f5902; font-style: italic"> */</span>
+
+<span style="color: #8f5902; font-style: italic">// Write your isNaN method:</span>
+<span style="color: #204a87; font-weight: bold">function</span> <span style="color: #000000">isTrueNaN</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">x</span><span style="color: #000000; font-weight: bold">)</span> <span style="color: #000000; font-weight: bold">{</span>
+    <span style="color: #204a87; font-weight: bold">return</span> <span style="color: #000000">x</span> <span style="color: #ce5c00; font-weight: bold">!==</span> <span style="color: #000000">x</span><span style="color: #000000; font-weight: bold">;</span>
+<span style="color: #000000; font-weight: bold">}</span>
+
+
+
+<span style="color: #8f5902; font-style: italic">// What is going on with the below codes:</span>
+<span style="color: #204a87; font-weight: bold">for</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">i</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">;</span> <span style="color: #000000">i</span> <span style="color: #ce5c00; font-weight: bold">&lt;</span> <span style="color: #0000cf; font-weight: bold">5</span><span style="color: #000000; font-weight: bold">;</span> <span style="color: #000000">i</span><span style="color: #ce5c00; font-weight: bold">++</span><span style="color: #000000; font-weight: bold">)</span> <span style="color: #000000; font-weight: bold">{</span>
+    <span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">button</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87">document</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">createElement</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #4e9a06">&#39;button&#39;</span><span style="color: #000000; font-weight: bold">);</span>
+    <span style="color: #000000">button</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">appendChild</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87">document</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">createTextNode</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #4e9a06">&#39;button &#39;</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #000000">i</span><span style="color: #000000; font-weight: bold">);</span>
+    <span style="color: #000000">button</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">addEventListener</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #4e9a06">&#39;click&#39;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">function</span><span style="color: #000000; font-weight: bold">()</span> <span style="color: #000000; font-weight: bold">{</span>
+        <span style="color: #000000">alert</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">i</span><span style="color: #000000; font-weight: bold">);</span>
+    <span style="color: #000000; font-weight: bold">}</span>
+
+    <span style="color: #204a87">document</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">body</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">appendChild</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">button</span><span style="color: #000000; font-weight: bold">);</span>
+<span style="color: #000000; font-weight: bold">}</span>
+<span style="color: #8f5902; font-style: italic">/* Obviously the above codes create 5 buttons on the document</span>
+<span style="color: #8f5902; font-style: italic"> * body. When you click on each button, you expect to see</span>
+<span style="color: #8f5902; font-style: italic"> * the corresponding number of each button. But oops, they</span>
+<span style="color: #8f5902; font-style: italic"> * all alert the number 5 to you. WHY? Because they all share</span>
+<span style="color: #8f5902; font-style: italic"> * the same i and at the end of the loop, i&#39;s value is 5.</span>
+<span style="color: #8f5902; font-style: italic"> *</span>
+<span style="color: #8f5902; font-style: italic"> * How to fix this? Give each listener their own copies of i.</span>
+<span style="color: #8f5902; font-style: italic"> */</span>
+<span style="color: #204a87; font-weight: bold">for</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">i</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">;</span> <span style="color: #000000">i</span> <span style="color: #ce5c00; font-weight: bold">&lt;</span> <span style="color: #0000cf; font-weight: bold">5</span><span style="color: #000000; font-weight: bold">;</span> <span style="color: #000000">i</span><span style="color: #ce5c00; font-weight: bold">++</span><span style="color: #000000; font-weight: bold">)</span> <span style="color: #000000; font-weight: bold">{</span>
+    <span style="color: #8f5902; font-style: italic">// ...</span>
+    <span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">function</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">i</span><span style="color: #000000; font-weight: bold">)</span> <span style="color: #000000; font-weight: bold">{</span>
+        <span style="color: #000000">button</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">addEventListener</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #4e9a06">&#39;click&#39;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">function</span><span style="color: #000000; font-weight: bold">()</span> <span style="color: #000000; font-weight: bold">{</span>
+        <span style="color: #8f5902; font-style: italic">// The passed i is captured (by closure).</span>
+        <span style="color: #8f5902; font-style: italic">// It is a different variable than the i used for for-loop.</span>
+            <span style="color: #000000">alert</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">i</span><span style="color: #000000; font-weight: bold">);</span>
+        <span style="color: #000000; font-weight: bold">}</span>
+    <span style="color: #000000; font-weight: bold">})(</span><span style="color: #000000">i</span><span style="color: #000000; font-weight: bold">);</span>
+
+    <span style="color: #8f5902; font-style: italic">// ...</span>
+<span style="color: #000000; font-weight: bold">}</span>
+
+
+<span style="color: #8f5902; font-style: italic">// Understand one-line assignment:</span>
+<span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">function</span><span style="color: #000000; font-weight: bold">()</span> <span style="color: #000000; font-weight: bold">{</span>
+    <span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">a</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">b</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #0000cf; font-weight: bold">3</span><span style="color: #000000; font-weight: bold">;</span>
+<span style="color: #000000; font-weight: bold">})();</span>
+
+<span style="color: #000000">console</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">log</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">a</span><span style="color: #000000; font-weight: bold">);</span> <span style="color: #8f5902; font-style: italic">//=&gt; undefined</span>
+<span style="color: #000000">console</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">log</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">b</span><span style="color: #000000; font-weight: bold">);</span> <span style="color: #8f5902; font-style: italic">//=&gt; 3</span>
+<span style="color: #8f5902; font-style: italic">// WHAT? Let&#39;s rewrite the above function to another format:</span>
+<span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">function</span><span style="color: #000000; font-weight: bold">()</span> <span style="color: #000000; font-weight: bold">{</span>
+    <span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">a</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">b</span><span style="color: #000000; font-weight: bold">;</span>
+    <span style="color: #000000">b</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #0000cf; font-weight: bold">3</span><span style="color: #000000; font-weight: bold">;</span>
+<span style="color: #000000; font-weight: bold">})();</span>
+<span style="color: #8f5902; font-style: italic">/* You see the problem? a is a local variable in the IIFE. It is</span>
+<span style="color: #8f5902; font-style: italic"> * undefined outside the scope. b is a global variable.</span>
+<span style="color: #8f5902; font-style: italic"> * Hence it is 3;</span>
+<span style="color: #8f5902; font-style: italic"> */</span>
+
+
+
+<span style="color: #8f5902; font-style: italic">// What is going on with the below codes:</span>
+<span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">list</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">readAHugeList</span><span style="color: #000000; font-weight: bold">();</span>
+<span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">nextListItem</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">function</span><span style="color: #000000; font-weight: bold">()</span> <span style="color: #000000; font-weight: bold">{</span>
+    <span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">item</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">list</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">pop</span><span style="color: #000000; font-weight: bold">();</span>
+
+    <span style="color: #204a87; font-weight: bold">if</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">item</span><span style="color: #000000; font-weight: bold">)</span> <span style="color: #000000; font-weight: bold">{</span>
+        <span style="color: #8f5902; font-style: italic">// process the item</span>
+        <span style="color: #000000">nextListItem</span><span style="color: #000000; font-weight: bold">();</span>
+    <span style="color: #000000; font-weight: bold">}</span>
+<span style="color: #000000; font-weight: bold">};</span> <span style="color: #8f5902; font-style: italic">// Stack Overflow if the list is way too big.</span>
+
+<span style="color: #8f5902; font-style: italic">// I think this solution is a trick:</span>
+<span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">nextListItem</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">function</span><span style="color: #000000; font-weight: bold">()</span> <span style="color: #000000; font-weight: bold">{</span>
+    <span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">item</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">list</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">pop</span><span style="color: #000000; font-weight: bold">();</span>
+
+    <span style="color: #204a87; font-weight: bold">if</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">item</span><span style="color: #000000; font-weight: bold">)</span> <span style="color: #000000; font-weight: bold">{</span>
+        <span style="color: #8f5902; font-style: italic">// process the item</span>
+        <span style="color: #000000">setTimeout</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">nextListItem</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">);</span>
+    <span style="color: #000000; font-weight: bold">}</span>
+<span style="color: #000000; font-weight: bold">};</span>
+<span style="color: #8f5902; font-style: italic">/* How does it work? The idea behind this is called event loop.</span>
+<span style="color: #8f5902; font-style: italic"> * The recursive call of nextListItem is pushed to the event loop</span>
+<span style="color: #8f5902; font-style: italic"> * and the function exits (stack frame is clear), and then </span>
+<span style="color: #8f5902; font-style: italic"> * the timed recursive call is invoked right after.</span>
+<span style="color: #8f5902; font-style: italic"> *</span>
+<span style="color: #8f5902; font-style: italic"> * Recursion is achieved without a direct recursive call.</span>
+<span style="color: #8f5902; font-style: italic"> */</span>
+</pre></td></tr></table></div>
