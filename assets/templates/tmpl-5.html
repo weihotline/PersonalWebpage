@@ -1,0 +1,130 @@
+<!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #8f5902; font-style: italic">/* Writing switch statement could be tricky sometimes.</span>
+<span style="color: #8f5902; font-style: italic"> * Here are some ways you can write switch statement.</span>
+<span style="color: #8f5902; font-style: italic"> */</span>
+
+<span style="color: #8f5902; font-style: italic">// The normal way:</span>
+<span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">animal</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #4e9a06">&quot;cat&quot;</span><span style="color: #000000; font-weight: bold">;</span>
+<span style="color: #204a87; font-weight: bold">switch</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">animal</span><span style="color: #000000; font-weight: bold">)</span> <span style="color: #000000; font-weight: bold">{</span>
+  <span style="color: #204a87; font-weight: bold">case</span> <span style="color: #4e9a06">&quot;dog&quot;</span><span style="color: #ce5c00; font-weight: bold">:</span>
+    <span style="color: #000000">console</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">log</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #4e9a06">&quot;woof!&quot;</span><span style="color: #000000; font-weight: bold">);</span>
+    <span style="color: #204a87; font-weight: bold">break</span><span style="color: #000000; font-weight: bold">;</span>
+  <span style="color: #204a87; font-weight: bold">case</span> <span style="color: #4e9a06">&quot;cow&quot;</span><span style="color: #ce5c00; font-weight: bold">:</span>
+    <span style="color: #000000">console</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">log</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #4e9a06">&quot;moo!&quot;</span><span style="color: #000000; font-weight: bold">);</span>
+    <span style="color: #204a87; font-weight: bold">break</span><span style="color: #000000; font-weight: bold">;</span>
+  <span style="color: #204a87; font-weight: bold">case</span> <span style="color: #4e9a06">&quot;cat&quot;</span><span style="color: #ce5c00; font-weight: bold">:</span>
+    <span style="color: #000000">console</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">log</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #4e9a06">&quot;meow!&quot;</span><span style="color: #000000; font-weight: bold">);</span>
+    <span style="color: #204a87; font-weight: bold">break</span><span style="color: #000000; font-weight: bold">;</span>
+  <span style="color: #204a87; font-weight: bold">default</span><span style="color: #ce5c00; font-weight: bold">:</span>
+    <span style="color: #000000">console</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">log</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #4e9a06">&quot;WHAT?&quot;</span><span style="color: #000000; font-weight: bold">);</span>
+    <span style="color: #204a87; font-weight: bold">break</span><span style="color: #000000; font-weight: bold">;</span>
+<span style="color: #000000; font-weight: bold">}</span> <span style="color: #8f5902; font-style: italic">//=&gt; &quot;meow!&quot;</span>
+
+
+
+<span style="color: #8f5902; font-style: italic">// The fallthrough:</span>
+<span style="color: #204a87; font-weight: bold">switch</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">animal</span><span style="color: #000000; font-weight: bold">)</span> <span style="color: #000000; font-weight: bold">{</span>
+  <span style="color: #204a87; font-weight: bold">case</span> <span style="color: #4e9a06">&quot;cat&quot;</span><span style="color: #ce5c00; font-weight: bold">:</span>
+    <span style="color: #000000">console</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">log</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #4e9a06">&quot;meow!&quot;</span><span style="color: #000000; font-weight: bold">);</span>
+  <span style="color: #204a87; font-weight: bold">case</span> <span style="color: #4e9a06">&quot;dog&quot;</span><span style="color: #ce5c00; font-weight: bold">:</span>
+    <span style="color: #000000">console</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">log</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #4e9a06">&quot;woof!&quot;</span><span style="color: #000000; font-weight: bold">);</span>
+  <span style="color: #204a87; font-weight: bold">default</span><span style="color: #ce5c00; font-weight: bold">:</span>
+    <span style="color: #000000">console</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">log</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #4e9a06">&quot;WHAT?&quot;</span><span style="color: #000000; font-weight: bold">);</span>
+<span style="color: #000000; font-weight: bold">}</span>
+<span style="color: #8f5902; font-style: italic">//=&gt; &quot;meow!&quot;</span>
+<span style="color: #8f5902; font-style: italic">//=&gt; &quot;woof!&quot;</span>
+<span style="color: #8f5902; font-style: italic">//=&gt; &quot;WHAT?&quot;</span>
+<span style="color: #8f5902; font-style: italic">/* once it hits the first match,</span>
+<span style="color: #8f5902; font-style: italic"> * it keeps executing until it hits a break;</span>
+<span style="color: #8f5902; font-style: italic"> */</span>
+
+
+
+<span style="color: #8f5902; font-style: italic">// The multi-matches:</span>
+<span style="color: #204a87; font-weight: bold">switch</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">animal</span><span style="color: #000000; font-weight: bold">)</span> <span style="color: #000000; font-weight: bold">{</span>
+  <span style="color: #204a87; font-weight: bold">case</span> <span style="color: #4e9a06">&quot;dog&quot;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&quot;cat&quot;</span><span style="color: #ce5c00; font-weight: bold">:</span>
+    <span style="color: #000000">console</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">log</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #4e9a06">&quot;Pets!&quot;</span><span style="color: #000000; font-weight: bold">);</span>
+    <span style="color: #204a87; font-weight: bold">break</span><span style="color: #000000; font-weight: bold">;</span>
+  <span style="color: #204a87; font-weight: bold">default</span><span style="color: #ce5c00; font-weight: bold">:</span>
+    <span style="color: #000000">console</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">log</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #4e9a06">&quot;Wild Animals!&quot;</span><span style="color: #000000; font-weight: bold">);</span>
+    <span style="color: #204a87; font-weight: bold">break</span><span style="color: #000000; font-weight: bold">;</span>
+<span style="color: #000000; font-weight: bold">}</span><span style="color: #8f5902; font-style: italic">//=&gt; &quot;Pets!&quot;</span>
+
+
+
+<span style="color: #8f5902; font-style: italic">// The conditionals:</span>
+<span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">name</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #4e9a06">&quot;Gizmo&quot;</span><span style="color: #000000; font-weight: bold">;</span>
+<span style="color: #204a87; font-weight: bold">switch</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">true</span><span style="color: #000000; font-weight: bold">)</span> <span style="color: #000000; font-weight: bold">{</span>
+  <span style="color: #204a87; font-weight: bold">case</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">animal</span> <span style="color: #ce5c00; font-weight: bold">===</span> <span style="color: #4e9a06">&quot;cat&quot;</span> <span style="color: #ce5c00; font-weight: bold">&amp;&amp;</span> <span style="color: #000000">name</span> <span style="color: #ce5c00; font-weight: bold">===</span> <span style="color: #4e9a06">&quot;Gizmo&quot;</span><span style="color: #000000; font-weight: bold">)</span><span style="color: #ce5c00; font-weight: bold">:</span>
+    <span style="color: #000000">console</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">log</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #4e9a06">&quot;My Kitten Gizmo!&quot;</span><span style="color: #000000; font-weight: bold">);</span>
+    <span style="color: #204a87; font-weight: bold">break</span><span style="color: #000000; font-weight: bold">;</span>
+  <span style="color: #204a87; font-weight: bold">case</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">animal</span> <span style="color: #ce5c00; font-weight: bold">===</span> <span style="color: #4e9a06">&quot;dog&quot;</span> <span style="color: #ce5c00; font-weight: bold">&amp;&amp;</span> <span style="color: #000000">name</span> <span style="color: #ce5c00; font-weight: bold">!==</span> <span style="color: #4e9a06">&quot;Gizmo&quot;</span><span style="color: #000000; font-weight: bold">)</span><span style="color: #ce5c00; font-weight: bold">:</span>
+    <span style="color: #000000">console</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">log</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #4e9a06">&quot;My Dog&#39;s name is not Gizmo!&quot;</span><span style="color: #000000; font-weight: bold">);</span>
+    <span style="color: #204a87; font-weight: bold">break</span><span style="color: #000000; font-weight: bold">;</span>
+  <span style="color: #204a87; font-weight: bold">default</span><span style="color: #ce5c00; font-weight: bold">:</span>
+    <span style="color: #000000">console</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">log</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #4e9a06">&quot;WHAT?&quot;</span><span style="color: #000000; font-weight: bold">);</span>
+<span style="color: #000000; font-weight: bold">}</span><span style="color: #8f5902; font-style: italic">//=&gt; &quot;My Kitten Gizmo!&quot;</span>
+</pre></td></tr></table></div>
