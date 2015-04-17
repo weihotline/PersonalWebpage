@@ -1,0 +1,158 @@
+<!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #8f5902; font-style: italic">/* Whenever you assign a variable to another variable,</span>
+<span style="color: #8f5902; font-style: italic"> * you must be aware of the data type.</span>
+<span style="color: #8f5902; font-style: italic"> * Javascript is always pass by value.</span>
+<span style="color: #8f5902; font-style: italic"> */</span>
+
+<span style="color: #8f5902; font-style: italic">// When primitive data is passed by value, we get a new copy.</span>
+<span style="color: #8f5902; font-style: italic">// Primitive data types:</span>
+<span style="color: #8f5902; font-style: italic">// String</span>
+<span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">a</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #4e9a06">&quot;abc&quot;</span><span style="color: #000000; font-weight: bold">;</span>
+<span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">b</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">a</span><span style="color: #000000; font-weight: bold">;</span>
+<span style="color: #000000">b</span> <span style="color: #ce5c00; font-weight: bold">+=</span> <span style="color: #4e9a06">&quot;def&quot;</span><span style="color: #000000; font-weight: bold">;</span>
+
+<span style="color: #000000">a</span> <span style="color: #8f5902; font-style: italic">//=&gt; &quot;abc&quot;</span>
+<span style="color: #000000">b</span> <span style="color: #8f5902; font-style: italic">//=&gt; &quot;abcdef&quot;</span>
+
+<span style="color: #8f5902; font-style: italic">// Number</span>
+<span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">num1</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #0000cf; font-weight: bold">1</span><span style="color: #000000; font-weight: bold">;</span>
+<span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">num2</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">num1</span><span style="color: #000000; font-weight: bold">;</span>
+<span style="color: #000000">num1</span><span style="color: #ce5c00; font-weight: bold">++</span><span style="color: #000000; font-weight: bold">;</span>
+
+<span style="color: #000000">num1</span> <span style="color: #8f5902; font-style: italic">//=&gt; 2;</span>
+<span style="color: #000000">num2</span> <span style="color: #8f5902; font-style: italic">//=&gt; 1;</span>
+
+
+
+<span style="color: #8f5902; font-style: italic">// What about Object? (e.g., Array) It is also passed by value.</span>
+<span style="color: #8f5902; font-style: italic">// Let me show you a confusing example.</span>
+<span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">arr1</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000; font-weight: bold">[</span> <span style="color: #0000cf; font-weight: bold">1</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">2</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">3</span> <span style="color: #000000; font-weight: bold">];</span>
+<span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">arr2</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">arr1</span><span style="color: #000000; font-weight: bold">;</span>
+<span style="color: #000000">arr2</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">push</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #0000cf; font-weight: bold">4</span><span style="color: #000000; font-weight: bold">);</span>
+
+<span style="color: #000000">arr1</span> <span style="color: #8f5902; font-style: italic">//=&gt; [ 1, 2, 3, 4 ];</span>
+<span style="color: #000000">arr2</span> <span style="color: #8f5902; font-style: italic">//=&gt; [ 1, 2, 3, 4 ];</span>
+
+<span style="color: #8f5902; font-style: italic">/* If it is passed by value, why does modifying arr2 affect arr1?</span>
+<span style="color: #8f5902; font-style: italic"> * It is because variable arr1 holds the reference to [ 1, 2, 3 ].</span>
+<span style="color: #8f5902; font-style: italic"> * When we assign arr1 to arr2, the value, which contains </span>
+<span style="color: #8f5902; font-style: italic"> * the reference, is copied from arr1 to arr2. </span>
+<span style="color: #8f5902; font-style: italic"> * Same reference means that they both point to</span>
+<span style="color: #8f5902; font-style: italic"> * the same object.</span>
+<span style="color: #8f5902; font-style: italic"> */</span>
+
+
+<span style="color: #8f5902; font-style: italic">// Deep duplicate an array:</span>
+<span style="color: #8f5902; font-style: italic">// one dimension array:</span>
+<span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">arr3</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000; font-weight: bold">[</span> <span style="color: #0000cf; font-weight: bold">1</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">2</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">3</span> <span style="color: #000000; font-weight: bold">];</span>
+<span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">arr4</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">arr3</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">slice</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">);</span>
+<span style="color: #000000">arr4</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">push</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #0000cf; font-weight: bold">4</span><span style="color: #000000; font-weight: bold">);</span>
+
+<span style="color: #000000">arr3</span> <span style="color: #8f5902; font-style: italic">//=&gt; [ 1, 2, 3 ]</span>
+<span style="color: #000000">arr4</span> <span style="color: #8f5902; font-style: italic">//=&gt; [ 1, 2, 3, 4 ]</span>
+
+
+<span style="color: #8f5902; font-style: italic">// multi-demension array:</span>
+<span style="color: #204a87; font-weight: bold">function</span> <span style="color: #000000">deepDup</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">array</span><span style="color: #000000; font-weight: bold">)</span> <span style="color: #000000; font-weight: bold">{</span>
+    <span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">length</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">array</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">length</span><span style="color: #000000; font-weight: bold">,</span>
+        <span style="color: #000000">dupArray</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000; font-weight: bold">[];</span>
+
+    <span style="color: #204a87; font-weight: bold">for</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">i</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">;</span> <span style="color: #000000">i</span> <span style="color: #ce5c00; font-weight: bold">&lt;</span> <span style="color: #000000">length</span><span style="color: #000000; font-weight: bold">;</span> <span style="color: #000000">i</span><span style="color: #ce5c00; font-weight: bold">++</span><span style="color: #000000; font-weight: bold">)</span> <span style="color: #000000; font-weight: bold">{</span>
+        <span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">el</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">array</span><span style="color: #000000; font-weight: bold">[</span><span style="color: #000000">i</span><span style="color: #000000; font-weight: bold">];</span>
+
+        <span style="color: #204a87; font-weight: bold">if</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87">Array</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">isArray</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">el</span><span style="color: #000000; font-weight: bold">))</span> <span style="color: #000000; font-weight: bold">{</span>
+            <span style="color: #000000">dupArray</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">push</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">deepDup</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">el</span><span style="color: #000000; font-weight: bold">));</span>
+        <span style="color: #000000; font-weight: bold">}</span> <span style="color: #204a87; font-weight: bold">else</span> <span style="color: #000000; font-weight: bold">{</span>
+            <span style="color: #000000">dupArray</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">push</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">el</span><span style="color: #000000; font-weight: bold">);</span>
+        <span style="color: #000000; font-weight: bold">}</span>
+    <span style="color: #000000; font-weight: bold">}</span>
+
+    <span style="color: #204a87; font-weight: bold">return</span> <span style="color: #000000">dupArray</span><span style="color: #000000; font-weight: bold">;</span>
+<span style="color: #000000; font-weight: bold">}</span>
+
+<span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">arre1</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000; font-weight: bold">[</span> <span style="color: #000000; font-weight: bold">[</span> <span style="color: #000000; font-weight: bold">[</span> <span style="color: #0000cf; font-weight: bold">1</span> <span style="color: #000000; font-weight: bold">],</span> <span style="color: #0000cf; font-weight: bold">2</span> <span style="color: #000000; font-weight: bold">],</span> <span style="color: #0000cf; font-weight: bold">3</span> <span style="color: #000000; font-weight: bold">];</span>
+<span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">arre2</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">deepDup</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">arre1</span><span style="color: #000000; font-weight: bold">);</span>
+<span style="color: #000000">arre2</span><span style="color: #000000; font-weight: bold">[</span><span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">][</span><span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">].</span><span style="color: #000000">push</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #0000cf; font-weight: bold">4</span><span style="color: #000000; font-weight: bold">);</span>
+<span style="color: #000000">arre2</span><span style="color: #000000; font-weight: bold">[</span><span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">].</span><span style="color: #000000">push</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #0000cf; font-weight: bold">5</span><span style="color: #000000; font-weight: bold">);</span>
+<span style="color: #000000">arre2</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">push</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #0000cf; font-weight: bold">6</span><span style="color: #000000; font-weight: bold">);</span>
+
+<span style="color: #000000">arre1</span> <span style="color: #8f5902; font-style: italic">//=&gt; [ [ [ 1 ], 2 ], 3 ]</span>
+<span style="color: #000000">arre2</span> <span style="color: #8f5902; font-style: italic">//=&gt; [ [ [ 1, 4 ], 2, 5 ], 3, 6 ]</span>
+</pre></td></tr></table></div>
