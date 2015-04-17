@@ -111,7 +111,7 @@
 <span style="color: #000000">arr2</span> <span style="color: #8f5902; font-style: italic">//=&gt; [ 1, 2, 3, 4 ];</span>
 
 <span style="color: #8f5902; font-style: italic">/* If it is passed by value, why does modifying arr2 affect arr1?</span>
-<span style="color: #8f5902; font-style: italic"> * It is because variable arr1 holds the reference to [ 1, 2, 3 ].</span>
+<span style="color: #8f5902; font-style: italic"> * It is because variable arr1 holds the reference to [1, 2, 3].</span>
 <span style="color: #8f5902; font-style: italic"> * When we assign arr1 to arr2, the value, which contains </span>
 <span style="color: #8f5902; font-style: italic"> * the reference, is copied from arr1 to arr2. </span>
 <span style="color: #8f5902; font-style: italic"> * Same reference means that they both point to</span>
@@ -155,4 +155,24 @@
 
 <span style="color: #000000">arre1</span> <span style="color: #8f5902; font-style: italic">//=&gt; [ [ [ 1 ], 2 ], 3 ]</span>
 <span style="color: #000000">arre2</span> <span style="color: #8f5902; font-style: italic">//=&gt; [ [ [ 1, 4 ], 2, 5 ], 3, 6 ]</span>
+
+
+<span style="color: #8f5902; font-style: italic">// Lastly, let&#39;s apply what we learn to a simple problem.</span>
+<span style="color: #8f5902; font-style: italic">// write a subsets method that returns an array of all subsets.</span>
+<span style="color: #204a87; font-weight: bold">function</span> <span style="color: #000000">subsets</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">array</span><span style="color: #000000; font-weight: bold">)</span> <span style="color: #000000; font-weight: bold">{</span>
+    <span style="color: #204a87; font-weight: bold">if</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">array</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">length</span> <span style="color: #ce5c00; font-weight: bold">===</span> <span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">)</span> <span style="color: #000000; font-weight: bold">{</span>
+        <span style="color: #204a87; font-weight: bold">return</span> <span style="color: #000000; font-weight: bold">[</span> <span style="color: #000000; font-weight: bold">[]</span> <span style="color: #000000; font-weight: bold">];</span> <span style="color: #8f5902; font-style: italic">// empty set</span>
+    <span style="color: #000000; font-weight: bold">}</span>
+
+    <span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">oldSubs</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">subsets</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">array</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">slice</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #0000cf; font-weight: bold">1</span><span style="color: #000000; font-weight: bold">)),</span>
+        <span style="color: #000000">newSubs</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">oldSubs</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">map</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">function</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">sub</span><span style="color: #000000; font-weight: bold">)</span> <span style="color: #000000; font-weight: bold">{</span>
+            <span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">newSub</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">sub</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">slice</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">);</span>
+            <span style="color: #000000">newSub</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">push</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">array</span><span style="color: #000000; font-weight: bold">[</span><span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">]);</span>
+            <span style="color: #204a87; font-weight: bold">return</span> <span style="color: #000000">newSub</span><span style="color: #000000; font-weight: bold">;</span>
+        <span style="color: #000000; font-weight: bold">});</span>
+
+    <span style="color: #204a87; font-weight: bold">return</span> <span style="color: #000000">oldSubs</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">concat</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">newSubs</span><span style="color: #000000; font-weight: bold">);</span>
+<span style="color: #000000; font-weight: bold">}</span>
+
+<span style="color: #000000">subsets</span><span style="color: #000000; font-weight: bold">([</span> <span style="color: #0000cf; font-weight: bold">1</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">2</span> <span style="color: #000000; font-weight: bold">]);</span> <span style="color: #8f5902; font-style: italic">//=&gt; [ [], [ 2 ], [ 1 ], [ 2, 1 ] ]</span>
 </pre></td></tr></table></div>
